@@ -4,25 +4,16 @@ var instructionsDiv = document.getElementsByClassName("instructions");
 
 // getElementsByClassName returns an array: [<button1>]
 button = button[0];
-    console.log("test1");
-// button[0].on()
-// button.on('click', clickResult);
+instructionsDiv = instructionsDiv[0];
 
 
-// ERROR
-// Button does not have a method "on."
-// We need to use an event handling function...
-
-
-button.on('click', function() {
-    
-});
 
 var clickResult = function() {
     // instructionsDiv has the properties:
         // instructionsDiv.class = "instructions"
         // instructionsDiv.style = "border: solid orange 2px; font-family: fantasy"
-    instructionsDiv.stlye = "border: solid red 2px;";
-    console.log("test1");
+    instructionsDiv.style.border = "solid red 2px";	
+	console.log("test1");
+    //this outputs "test1"
     
 }; // end clickResult()
