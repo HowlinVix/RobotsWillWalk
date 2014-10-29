@@ -6,7 +6,7 @@ var instructionsDiv = document.getElementsByClassName("instructions");
 button = button[0];
     console.log("test1");
 // button[0].on()
-// button.on('click', clickResult);
+// button.on('click', clickResult);<img src="http://placedog.com/500/432">
 
 
 // ERROR
