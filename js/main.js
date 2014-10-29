@@ -1,16 +1,52 @@
-// Find the DOM element with the class name "button1"
-var button = document.getElementsByClassName("button1");
-var instructionsDiv = document.getElementsByClassName("instructions");
+var abutton = document.getElementById("abutton");
+var drawCircleButton = document.getElementById("drawcircle");
+var animateCircleButton = document.getElementById("abutton");
 
+var instructionsDiv = document.getElementsByClassName("instructions");
+var canvas = document.getElementById('canvas');
+var canvasW = canvas.width;
+var canvasH = canvas.height;
+var context = canvas.getContext('2d');
+var circleRadians = (2*Math.PI);
+
+var testCircle;
+
+var buttonWidth = 25;
+  
 // getElementsByClassName returns an array: [<button1>]
-button = button[0];
 instructionsDiv = instructionsDiv[0];
+
 var clickResult = function () {
-  // instructionsDiv has the properties:
-  // instructionsDiv.class = "instructions"
-  // instructionsDiv.style = "border: solid orange 2px; font-family: fantasy"
+//  debugger;
+  abutton.style.width = (++buttonWidth) + "%"; // increment & typecast to string
   instructionsDiv.style.border = "solid red 2px";
   console.log("test1");
-  //this outputs "test1"
-
 }; // end clickResult()
+
+var drawCircle = function() {
+  context.clearRect(0, 0, canvasW, canvasH);
+  
+  context.beginPath();
+  context.ellipse(circle.x, circle.y, circle.r, circle.r, 0, 0, circleRadians);
+  context.stroke();
+
+  if (circle.x > canvasW) {
+    circle.x = 0;
+  } else {
+    circle.x += 1;
+  }
+  
+}; // end drawCircle()
+
+var animateCircle = function() {
+  setInterval(drawCircle, 30);  
+}; // end animateCircle()
+
+// TODO: BUTTON: CREATE HERO BOT
+
+// TODO: BUTTON: CREATE ENEMY CIRCLE
+
+
+
+
+
