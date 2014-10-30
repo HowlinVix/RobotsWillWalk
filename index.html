@@ -2,20 +2,24 @@
 
 <head>
   <title>Robots Will Walk</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="border: solid blue 2px">
-   <canvas id="canvas" width="400px" height="400px" style="border: solid orange 2px;"></canvas>
-  <div style="width:50%; border: solid purple 2px; align-self: center;">
+<body>
+  <h2>Robots Will Walk!!!</h2>
+  <div class="blurred-background"></div>
+  <canvas id="canvas" width="1366px" height="768px"></canvas>
+  <div id="div-button" style="border: solid purple 2px; align-self: center;">
     <button id="abutton" style="width: 25%; height: 50px;" onclick="clickResult()">A Button</button>
     <button id="drawcircle" style="width: 25%; height: 50px;" onclick="drawCircle()">Draw Circle</button>
     <button id="animatecircle" style="width: 25%; height: 50px;" onclick="animateCircle()">Animate Circle</button>
   </div>
   <div class="instructions" style="width:50%; border: solid green 2px; align-self: center;">
-  <svg class="circlesvg" width="80px" height="80px" style="border: solid blue 0px">
-    <circle class="circle1" cx="40" cy="40" r="40" fill="orange" />
-  </svg>
+    <svg class="circlesvg" width="80px" height="80px" style="border: solid blue 0px">
+      <circle class="circle1" cx="40" cy="40" r="40" fill="orange" />
+    </svg>
   </div>
+  <script type="text/javascript" src="js/environment.js"></script>
   <script type="text/javascript" src="js/heroBot.js"></script>
   <script type="text/javascript" src="js/enemyCircle.js"></script>
   <script type="text/javascript" src="js/circle.js"></script>

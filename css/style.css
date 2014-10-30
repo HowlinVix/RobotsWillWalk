@@ -1,0 +1,40 @@
+body {
+  background-color: grey;
+  background-repeat: no-repeat;
+  margin: 0px;
+}
+canvas {
+  border: solid black 4px;
+  background-image: url(/images/back1-1366x768.jpg);
+  opacity: 1;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+#div-button {
+  width: 1366px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  align-items: center;
+}
+h2 {
+  font-family: 'Courier New', sans-serif;
+  text-align: center;
+  margin: 1px;
+  font-size: 60px;
+  background-color: rgba(113, 113, 113, 0.72);
+  border-radius: 1px;
+}
+.blurred-background {
+  background: url('/images/apoc0.jpg') no-repeat center center fixed;
+  background-size: 100%;
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
