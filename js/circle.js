@@ -2,8 +2,8 @@ var circlesvg = document.getElementsByClassName("circlesvg")[0];
 var circle1 = document.getElementsByClassName("circle1")[0];
 
 var circle = {
-  'x' : 125, // circle.x
-  'y' : 125, // circle.y
+  'x' : 1341, // circle.x
+  'y' : 743, // circle.y
   'r' : 25 // Redundant property
 };
 
@@ -13,11 +13,10 @@ var circle = {
   //circle.left = circle.x + circle.r;
 
 var circle2 = {};
-circle2.x = 100;
+circle2.x = 1366;
 circle2.y = 100;
 circle2.width = 50;
 circle2.height = 50;
 
 //var ellipseX = 125;
 //var ellipseY = 125;
-
