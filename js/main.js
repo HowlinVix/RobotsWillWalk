@@ -9,6 +9,10 @@ var canvasH = canvas.height;
 var context = canvas.getContext('2d');
 var circleRadians = (2*Math.PI);
 
+var heroRobots = [];
+//var heroRobotsLength = 0; // USE latestRobot
+var latestRobot = -1;
+
 var testCircle;
 
 var buttonWidth = 25;
@@ -45,9 +49,3 @@ var animateCircle = function() {
 // TODO: BUTTON: CREATE HERO BOT
 
 // TODO: BUTTON: CREATE ENEMY CIRCLE
-
-
-
-
-
-
