@@ -38,3 +38,10 @@ h2 {
   left: 0;
   z-index: -1;
 }
+.herofactory {
+  z-index: 2;
+  position: fixed; /* hacky fix. Refactor later */
+}
+.robot {
+  transform: scaleX(-1); /* Reverses image, but won't work because it's overwritten... */
+}

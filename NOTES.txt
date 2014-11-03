@@ -1,0 +1,14 @@
+ANIMATION:
+  FAST Animations:
+    1. Position (transform: translate(Npx, Npx);
+    2. Scale (transform: scale(N);
+    3. Rotation (transform: rotate(Ndeg);
+    4. Opacity (opacity: 0...1);
+
+  INFO: Order of browser animation is:
+    1. (Re)Calculate styles
+    2. Layout (generate geometry and position for each element)
+    3. Pain (fill out pixels for each element into layers)
+    4. Composite layers (Draw layers onto screen)
+    
+EVENTS:
