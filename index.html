@@ -3,24 +3,7 @@
 <head>
   <title>Robots Will Walk</title>
   <link rel="stylesheet" href="css/style.css">
-</head>
 
-<body>
-  <h2>Robots Will Walk!!!</h2>
-  <div class="blurred-background"></div>
-  <canvas id="canvas" width="1366px" height="768px"></canvas>
-  <div id="div-button" style="border: solid purple 2px; align-self: center;">
-    <button id="abutton" style="width: 25%; height: 50px;" onclick="clickResult()">A Button</button>
-    <button id="drawcircle" style="width: 25%; height: 50px;" onclick="drawCircle()">Draw Circle</button>
-    <button id="enemycircle" style="width: 25%; height: 50px;" onclick="animateEnemyCircle()">Enemy Circle</button>
-    <button id="animatecircle" style="width: 25%; height: 50px;" onclick="animateCircle()">Animate Circle</button>
-    <button id="makerobot" style="width: 25%; height: 50px;" onclick="makeRobot()">Make Robot</button>
-  </div>
-  <div class="instructions" style="width:50%; border: solid green 2px; align-self: center;">
-    <svg class="circlesvg" width="80px" height="80px" style="border: solid blue 0px">
-      <circle class="circle1" cx="40" cy="40" r="40" fill="orange" />
-    </svg>
-  </div>
   <script type="text/javascript" src="js/circle.js"></script>
   <script type="text/javascript" src="js/enemyCircle.js"></script>
   <script type="text/javascript" src="js/environment.js"></script>
@@ -28,5 +11,37 @@
   <script type="text/javascript" src="js/ProtoBot.js"></script>
   <script type="text/javascript" src="js/TEMPdancer.js"></script>
   <script type="text/javascript" src="js/circle.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/getInteractiveButtons.js"></script>
+  <script type="text/javascript" src="js/Game.js"></script>
+  <script type="text/javascript" src="js/GameView.js"></script>
+</head>
+
+<body>
+  <h2>Robots Will Walk!!!</h2>
+  <div class="blurred-background"></div>
+  <canvas id="canvas"></canvas>
+  <table id="gridoverlaytable"></table> <!-- populated in GameView.js -->
+    
+  <div id="div-button" style="border: solid purple 2px; align-self: center;">
+    <button id="abutton" style="width: 25%; height: 50px;" onclick="clickResult()">A Button</button>
+    <button id="drawcircle" style="width: 25%; height: 50px;" onclick="drawCircle()">Draw Circle</button>
+    <button id="enemycircle" style="width: 25%; height: 50px;" onclick="animateEnemyCircle()">Enemy Circle</button>
+    <button id="animatecircle" style="width: 25%; height: 50px;" onclick="animateCircle()">Animate Circle</button>
+    <button id="makerobot" style="width: 25%; height: 50px;" onclick="makeRobot()">Make Robot</button>
+    <button id="togglegrid" style="width: 25%; height: 50px;" onclick="Game.GameView.toggleGrid()">Toggle Grid</button>
+  </div>
+  <div class="instructions" style="width:50%; border: solid green 2px; align-self: center;">
+    <svg class="circlesvg" width="80px" height="80px" style="border: solid blue 0px">
+      <circle class="circle1" cx="40" cy="40" r="40" fill="orange" />
+    </svg>
+  </div>
+
+  <script>
+    window.onload = function () {
+      window.Game = new Game();
+
+      window.onresize = Game.calculateBrowserDimensions(); // Don't need  '()' here. Weird. end window.resize
+    }
+  </script>
+
 </body>

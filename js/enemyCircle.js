@@ -8,7 +8,7 @@
 
 // TODO: march RIGHT TO LEFT
 var enemyC = function() {
-  context.clearRect(0, 0, canvasW, canvasH);
+  context.clearRect(0, 0, canvas.width, canvas.height);
   context.fillStyle = "red";
   context.beginPath();
   context.ellipse(circle.x, circle.y, circle.r, circle.r, 0, 0, circleRadians);
@@ -21,11 +21,17 @@ var enemyC = function() {
     circle.x -= 1;
   }
   
-}; // end drawCircle()
+//  return this;
+  
+}; // end enemyC()
 
 var animateEnemyCircle = function() {
   setInterval(enemyC, 30);
 }
 
+//var makeCircleFunction = Object.create(enemyC);
+
 
 // TODO: disappear when it TOUCHES heroBot
+
+// var newCircle = makeCircleFunction();
