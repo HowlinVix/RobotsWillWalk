@@ -30,14 +30,17 @@ var ProtoBot = function () {
   // this might need to be refactored later for edge-detection
   // Enemy will start @ enemy factory, detect right edge
   // Hero will start @ hero factory, detect left edge
-  this.xPosition = 1090;
-  this.yPosition = 600;
+  this.xPosition = window.Game.heroFactoryCenterX;
+  this.yPosition = window.Game.heroFactoryCenterY;
+  console.log(this);
 
   this.speed = 1;
   this.xOffset = 0;
   this.hp = 50;
   this.attackSpeed = 1;
   this.damage = 10;
+  
+  this.ID = ProtoBot.generateID();
 };
 
 // Instantiate with inheritance
@@ -45,21 +48,29 @@ var ProtoBot = function () {
 
 ProtoBot.prototype.constructor = ProtoBot;
 
-ProtoBot.prototype.step = function () {
-  //  RobotParentClass.prototype.step.call(this); // old version of step function
-  RobotParentClass.prototype.step.call(this); // old version of step function
-  var creepLeft = (this.leftPos + this.creep);
-  this.creep *= -1;
-  this.$node.animate({
-    left: creepLeft
-  }, this.timeBetweenSteps);
-};
+//ProtoBot.prototype.step = function () {
+//  //  RobotParentClass.prototype.step.call(this); // old version of step function
+//  RobotParentClass.prototype.step.call(this); // old version of step function
+//  var creepLeft = (this.leftPos + this.creep);
+//  this.creep *= -1;
+//  this.$node.animate({
+//    left: creepLeft
+//  }, this.timeBetweenSteps);
+//};
 
 ProtoBot.assignImage = function (pictureFilename) {
   //  this.image = document.createElement('img');
   this.image.src = './images/' + pictureFilename;
   //  return '<img src="./images/' + pictureFilename + '">';
 };
+
+ProtoBot.ID = 0;
+
+ProtoBot.generateID = function() {
+  ProtoBot.ID++
+  return ProtoBot.ID;
+};
+  
 
 ProtoBot.assignNode = function () {
   //  this.node = document.createElement('span');
@@ -68,32 +79,28 @@ ProtoBot.assignNode = function () {
 //  console.log(this.node);
 }; // end createNode()
 
+
 ProtoBot.prototype.walk = function () {
   var context = this;
   setTimeout(function () {
 //    debugger;
-    context.xOffset -= context.speed;
-//        context.instanceNode.style.transform='translate(' + this.speed + 'px, 0px)"'
-    context.instanceNode.style.transform = 'translate(' + context.xOffset + 'px)';
-//    console.log("walking");
+//    context.xOffset -= context.speed;
+    context.xPosition -= context.speed;
+//    context.instanceNode.style.transform='translate(' + this.speed + 'px, 0px)"'
+    context.instanceNode.style.transform = 'translate(' + context.xPosition + 'px)';
     context.walk();
   }, context.timeBetweenSteps);
-  //  debugger;
   //  this.instanceNode.style.transform="transpose(50px, 50px)";
-
-
 };
+
 
 ProtoBot.prototype.setPosition = function (top, left) {
   var styleSettings = {
-    top: top,
-    left: left,
+    top: window.Game.heroFactoryCenterY,
+    left: window.Game.heroFactoryCenterX,
+//    top: 100,
+//    left: 100,
     border: '0px'
   };
   this.$node.css(styleSettings);
 }; // end setPosition
-
-ProtoBot.prototype.lineUp = function () {
-  //  this.leftPos = RobotParentClass.prototype.lineUp.call(this); // old version of step function
-  this.leftPos = RobotParentClass.prototype.lineUp.call(this); // old version of step function
-} // end lineUp()
