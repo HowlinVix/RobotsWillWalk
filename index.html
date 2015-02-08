@@ -1,18 +1,21 @@
 <!doctype html>
-
-<head>
-    <title>Robots Will Walk</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/enemyStyles.css">
+<title>Robots Will Walk</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/enemyStyles.css">
 </head>
 
 <body>
     <header>
         <h2>Robots Will Walk!!!</h2>
+            <button id="makerobot" style="width: 25%; height: 50px;" onclick="makeRobot()">Make Robot</button>
+            <button id="togglegrid" style="width: 25%; height: 50px;" onclick="Game.GameView.toggleGrid()">Toggle Grid</button>
     </header>
-
+    
     <div class="blurred-background"></div>
     <canvas id="canvas" width="1366px" height="768px"></canvas>
+        <table id="gridoverlaytable"></table>
+        <!-- populated in GameView.js -->
+    
     <footer>
         <ul class="hero-buttons">
             <li class="hero-robots">
@@ -28,7 +31,7 @@
                 <span>Robot 3</span>
             </li>
             <li class="hero-robots">
-<!--                <img src="images/robot4.gif" data-robotype="4">-->
+                <!--                <img src="images/robot4.gif" data-robotype="4">-->
                 <span>Robot 4</span>
             </li>
             <li class="hero-robots">
@@ -37,36 +40,39 @@
             </li>
         </ul>
     </footer>
-
+    
+    <script type="text/javascript" src="js/ProtoBot.js"></script>
+<!--    <script type="text/javascript" src="js/TEMPdancer.js"></script>-->
+    <script type="text/javascript" src="js/getInteractiveButtons.js"></script>
     <script type="text/javascript" src="js/environment.js"></script>
     <script type="text/javascript" src="js/heroBot.js"></script>
-    <script type="text/javascript" src="js/enemyCircle.js"></script>
-    <script type="text/javascript" src="js/circle.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/stage.js"></script>
+    <script type="text/javascript" src="js/Game.js"></script>
+    <script type="text/javascript" src="js/GameView.js"></script>
     <script>
         window.onload = function () {
-            var Game = {};
-            window.stage = new Stage();
-            window.heros = new Hero();
-
-
-//            propNames.forEach(function (name) {
-//                var desc = Object.getOwnPropertyDescriptor(o, name);
-//                Object.defineProperty(copy, name, desc);
-//            });
-
-
-            var robotButtons = document.getElementsByTagName('li');
-            console.log(robotButtons);
-
+                window.Game = new Game();
+                window.onresize = Game.calculateBrowserDimensions(); // Don't need  '()' here. Weird. end window.resize
             
-            for (var i = 0; i < robotButtons.length; i++) {
-                robotButtons[i].addEventListener('click', function (e) {
-                    window.heros.buyRobot(this);
-                }); // end addEventListener(click)
-            } // end for (robotButtons)
-            
-        } // end window.onload
+                window.stage = new Stage();
+                window.heros = new Hero();
+
+
+                //            propNames.forEach(function (name) {
+                //                var desc = Object.getOwnPropertyDescriptor(o, name);
+                //                Object.defineProperty(copy, name, desc);
+                //            });
+
+
+                var robotButtons = document.getElementsByTagName('li');
+                console.log(robotButtons);
+
+
+                for (var i = 0; i < robotButtons.length; i++) {
+                    robotButtons[i].addEventListener('click', function (e) {
+                        window.heros.buyRobot(this);
+                    }); // end addEventListener(click)
+                } // end for (robotButtons)
+
+            } // end window.onload
     </script>
-</body>
