@@ -1,28 +1,72 @@
 <!doctype html>
 
 <head>
-  <title>Robots Will Walk</title>
-  <link rel="stylesheet" href="css/style.css">
+    <title>Robots Will Walk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enemyStyles.css">
 </head>
 
 <body>
-  <h2>Robots Will Walk!!!</h2>
-  <div class="blurred-background"></div>
-  <canvas id="canvas" width="1366px" height="768px"></canvas>
-  <div id="div-button" style="border: solid purple 2px; align-self: center;">
-    <button id="abutton" style="width: 25%; height: 50px;" onclick="clickResult()">A Button</button>
-    <button id="drawcircle" style="width: 25%; height: 50px;" onclick="drawCircle()">Draw Circle</button>
-    <button id="enemycircle" style="width: 25%; height: 50px;" onclick="animateEnemyCircle()">Enemy Circle</button>
-    <button id="animatecircle" style="width: 25%; height: 50px;" onclick="animateCircle()">Animate Circle</button>
-  </div>
-  <div class="instructions" style="width:50%; border: solid green 2px; align-self: center;">
-    <svg class="circlesvg" width="80px" height="80px" style="border: solid blue 0px">
-      <circle class="circle1" cx="40" cy="40" r="40" fill="orange" />
-    </svg>
-  </div>
-  <script type="text/javascript" src="js/environment.js"></script>
-  <script type="text/javascript" src="js/heroBot.js"></script>
-  <script type="text/javascript" src="js/enemyCircle.js"></script>
-  <script type="text/javascript" src="js/circle.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
+    <header>
+        <h2>Robots Will Walk!!!</h2>
+    </header>
+
+    <div class="blurred-background"></div>
+    <canvas id="canvas" width="1366px" height="768px"></canvas>
+    <footer>
+        <ul class="hero-buttons">
+            <li class="hero-robots">
+                <img src="images/robot1.gif" data-robotype="1">
+                <span>Robot 1</span>
+            </li>
+            <li class="hero-robots">
+                <img src="images/robot2.gif" data-robotype="2">
+                <span>Robot 2</span>
+            </li>
+            <li class="hero-robots">
+                <img src="images/robot3.gif" data-robotype="3">
+                <span>Robot 3</span>
+            </li>
+            <li class="hero-robots">
+<!--                <img src="images/robot4.gif" data-robotype="4">-->
+                <span>Robot 4</span>
+            </li>
+            <li class="hero-robots">
+                <img src="images/robot5.gif" data-robotype="5">
+                <span>Robot 5</span>
+            </li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="js/environment.js"></script>
+    <script type="text/javascript" src="js/heroBot.js"></script>
+    <script type="text/javascript" src="js/enemyCircle.js"></script>
+    <script type="text/javascript" src="js/circle.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/stage.js"></script>
+    <script>
+        window.onload = function () {
+            var Game = {};
+            window.stage = new Stage();
+            window.heros = new Hero();
+
+
+//            propNames.forEach(function (name) {
+//                var desc = Object.getOwnPropertyDescriptor(o, name);
+//                Object.defineProperty(copy, name, desc);
+//            });
+
+
+            var robotButtons = document.getElementsByTagName('li');
+            console.log(robotButtons);
+
+            
+            for (var i = 0; i < robotButtons.length; i++) {
+                robotButtons[i].addEventListener('click', function (e) {
+                    window.heros.buyRobot(this);
+                }); // end addEventListener(click)
+            } // end for (robotButtons)
+            
+        } // end window.onload
+    </script>
 </body>

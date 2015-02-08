@@ -1,40 +1,149 @@
+html {
+    overflow: hidden;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
 body {
-  background-color: grey;
-  background-repeat: no-repeat;
-  margin: 0px;
+    background-color: grey;
+    background-repeat: no-repeat;
+    margin: 0px;
 }
+
 canvas {
-  border: solid black 4px;
-  background-image: url(/images/back1-1366x768.jpg);
-  opacity: 1;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
+    border: solid black 4px;
+    background-image: url(/images/back1-1366x768.jpg);
+    opacity: 1;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 80px;
+    margin-bottom: 0px;
 }
+
 #div-button {
-  width: 1366px;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  align-items: center;
+    width: 1366px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    align-items: center;
 }
+
+header,
+footer {
+    position: fixed;
+    top: 0px;
+    width: 100%!important;
+    font-family: 'Courier New', sans-serif;
+    text-align: center;
+    background-color: rgba(113, 113, 113, 0.72);
+    line-height: 0px;
+    z-index: 10;
+    height: 80px;
+}
+
 h2 {
-  font-family: 'Courier New', sans-serif;
-  text-align: center;
-  margin: 1px;
-  font-size: 60px;
-  background-color: rgba(113, 113, 113, 0.72);
-  border-radius: 1px;
+    font-size: 80px;
+    line-height: 0px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0px;
 }
+
 .blurred-background {
-  background: url('/images/apoc0.jpg') no-repeat center center fixed;
-  background-size: 100%;
-  -webkit-filter: blur(3px);
-  filter: blur(3px);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+    background: url('/images/apoc2.jpg') no-repeat center center fixed;
+    background-size: 100%;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+footer {
+    display: inline-block;
+    position: relative;
+    top: -4px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    line-height: 0;
+    align-content: center;
+}
+
+ul {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    width: 1366px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0px;
+    padding-top: 0px;
+    top: -15px;
+}
+
+.hero-robots {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    height: 80px;
+    max-height: 80px;
+    width: 15%;
+    border: 4px solid black;
+    background-color: rgba(255, 161, 52, 0.44);
+    border-radius: 15px;
+    text-align: center!important;
+    cursor: pointer;
+}
+
+.hero-robots span {
+    position: relative;
+    bottom: 0px!important;
+    display: inline-flex;
+    height: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    font-weight: 900;
+    width: auto;
+    padding: 0px auto 0px auto;
+    margin: 46px 0px 3px 0px;
+    left: 0px;
+}
+
+.hero-robots span {
+    background-color: transparent;
+}
+
+.hero-robots:nth-child(1) {
+    background-image: url(../images/robot1.gif) no-repeat center center fixed;
+}
+
+.hero-robots:nth-child(2) {
+    background-image: url(../images/robot2.gif) no-repeat center center fixed;
+}
+
+.hero-robots:nth-child(3) {
+    background-image: url(../images/robot3.gif) no-repeat center center fixed;
+}
+
+.hero-robots:nth-child(4) {
+    background-image: url(../images/robot4.gif) no-repeat center center fixed;
+}
+
+.hero-robots:nth-child(5) {
+    background-image: url(../images/robot5.gif) no-repeat center center fixed;
 }
